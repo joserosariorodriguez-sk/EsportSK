@@ -478,6 +478,11 @@ main {
   gap: 1.2rem;
 }
 
+.home-game-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
 .large-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -523,6 +528,81 @@ main {
 .game-card .game-badge {
   color: var(--game-accent);
   border-color: var(--game-accent);
+}
+
+.home-game-card {
+  --home-game-accent: var(--sky);
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--home-game-accent);
+  border-top-width: 4px;
+  background: linear-gradient(155deg, rgba(22, 119, 223, 0.13), rgba(9, 27, 47, 0.96) 48%);
+  transition: transform 0.28s cubic-bezier(0.2, 0.75, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.home-game-card:nth-child(2) {
+  --home-game-accent: #a9e86e;
+}
+
+.home-game-card:nth-child(3) {
+  --home-game-accent: #ff9c61;
+}
+
+.home-game-card:nth-child(4) {
+  --home-game-accent: #ff7096;
+}
+
+.home-game-card:nth-child(5) {
+  --home-game-accent: #5de2ca;
+}
+
+.home-game-card:nth-child(6) {
+  --home-game-accent: #ff5d63;
+}
+
+.home-game-card:hover,
+.home-game-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--home-game-accent);
+  box-shadow: 0 0 0 1px var(--home-game-accent), 0 18px 38px rgba(0, 0, 0, 0.35);
+}
+
+.home-game-card .game-art {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.home-game-card:hover .game-art,
+.home-game-card:focus-visible .game-art {
+  transform: scale(1.035);
+  filter: saturate(1.12);
+}
+
+.home-game-card .game-badge {
+  color: var(--home-game-accent);
+  border-color: var(--home-game-accent);
+}
+
+.home-game-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--home-game-accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-game-link span {
+  transition: transform 0.25s ease;
+}
+
+.home-game-card:hover .home-game-link span,
+.home-game-card:focus-visible .home-game-link span {
+  transform: translateX(4px);
 }
 
 .game-art {
