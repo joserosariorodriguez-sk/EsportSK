@@ -580,6 +580,32 @@ main {
   letter-spacing: 0.08em;
 }
 
+.sportsyou-section {
+  align-items: center;
+}
+
+.sportsyou-qr {
+  width: min(100%, 280px);
+  justify-self: center;
+  margin: 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.sportsyou-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sportsyou-qr figcaption {
+  margin-top: 0.6rem;
+  color: #04101f;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 .join-section {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
