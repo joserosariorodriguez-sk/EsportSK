@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const status = document.getElementById("formStatus");
 
   if (form) {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const requiredFields = form.querySelectorAll("[required]");
@@ -50,9 +50,33 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      const submitButton = form.querySelector("button[type='submit']");
+      submitButton.disabled = true;
+      status.textContent = "Submitting...";
       status.classList.remove("error");
-      status.textContent = "Thanks! Your interest has been submitted successfully.";
-      form.reset();
+
+      try {
+        const response = await fetch("https://formspree.io/f/simple-sequoia-119", {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form)
+        });
+
+        if (response.ok) {
+          status.classList.remove("error");
+          status.textContent = "🎮 Thanks! Your interest has been submitted. We'll review and be in touch soon.";
+          form.reset();
+          submitButton.disabled = false;
+        } else {
+          status.textContent = "There was a problem sending your form. Please try again.";
+          status.classList.add("error");
+          submitButton.disabled = false;
+        }
+      } catch (error) {
+        status.textContent = "Connection error. Please check your internet and try again.";
+        status.classList.add("error");
+        submitButton.disabled = false;
+      }
     });
   }
 });
