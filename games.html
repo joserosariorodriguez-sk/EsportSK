@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Games | Simon Kenton Esports</title>
+    <meta
+      name="description"
+      content="Explore the game titles and competitive formats used by Simon Kenton Esports during the school season."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Simon Kenton Esports home">
+          <span class="brand-mark">SK</span>
+          <span>SIMON KENTON <b>ESPORTS</b></span>
+        </a>
+
+        <button class="menu-button" id="menu-button" aria-expanded="false" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="games.html" class="active">Games</a>
+          <a href="eligibility.html">Eligibility</a>
+          <a href="practice.html">Practice</a>
+          <a class="nav-cta" href="join.html">Join the team</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="kicker">Games</p>
+          <h1>Our competitive rotations.</h1>
+        </section>
+
+        <section class="section">
+          <div class="game-grid large-grid">
+            <article class="game-card">
+              <div class="game-badge">FPS</div>
+              <h3>Valorant</h3>
+              <p>Highly tactical, fast-paced five-player rounds that reward communication, planning, and clutch execution.</p>
+            </article>
+
+            <article class="game-card">
+              <div class="game-badge">Racing</div>
+              <h3>Rocket League</h3>
+              <p>High-speed team play built on ball control, creativity, and disciplined positioning.</p>
+            </article>
+
+            <article class="game-card">
+              <div class="game-badge">Fighting</div>
+              <h3>Super Smash Bros.</h3>
+              <p>Skill-based matchups where timing, reads, and composure decide the outcome.</p>
+            </article>
+
+            <article class="game-card">
+              <div class="game-badge">Strategy</div>
+              <h3>League of Legends</h3>
+              <p>Team coordination, map awareness, and adaptability across long-form competitive play.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section alt-section">
+          <div class="section-heading">
+            <p class="kicker">Season structure</p>
+            <h2>How we compete.</h2>
+          </div>
+
+          <div class="check-grid">
+            <div class="check-item">
+              <span>01</span>
+              <h3>Weekly prep</h3>
+              <p>Players review strategy, mechanics, and role responsibilities with structured team sessions.</p>
+            </div>
+            <div class="check-item">
+              <span>02</span>
+              <h3>Scrims</h3>
+              <p>We test tactics and build chemistry through practice matches and simulated pressure scenarios.</p>
+            </div>
+            <div class="check-item">
+              <span>03</span>
+              <h3>Official competition</h3>
+              <p>We represent the school in league and tournament play under school and KHSAA expectations.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="brand">
+          <span class="brand-mark">SK</span>
+          <span>SIMON KENTON <b>ESPORTS</b></span>
+        </div>
+        <p>Competitive. Respectful. Welcoming.</p>
+        <small>© <span id="year"></span> Simon Kenton Esports</small>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

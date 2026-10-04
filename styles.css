@@ -1,0 +1,835 @@
+:root {
+  --navy: #04101f;
+  --deep: #020914;
+  --blue: #1677df;
+  --sky: #77b8ff;
+  --gold: #f7f4eb;
+  --ink: #f4f8ff;
+  --muted: #a9bad0;
+  --line: rgba(119, 184, 255, 0.22);
+  --panel: rgba(10, 24, 39, 0.82);
+  --card: #091b2f;
+  --success: #7ce7b2;
+  --danger: #ff6b6b;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+  --max: 1280px;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background:
+    linear-gradient(180deg, rgba(3, 12, 24, 1) 0%, rgba(2, 9, 20, 1) 100%);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.site-shell {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(4, 16, 31, 0.28), rgba(4, 16, 31, 0.28)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(119, 184, 255, 0.04) 0,
+      rgba(119, 184, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.topbar,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  max-width: var(--max);
+  margin: 0 auto;
+  height: 88px;
+  padding: 0 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background: rgba(2, 9, 20, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), var(--sky));
+  color: var(--navy);
+  font-weight: 800;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.brand b {
+  font-weight: 800;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav a {
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  opacity: 1;
+}
+
+.nav-cta {
+  padding: 0.8rem 1.25rem;
+  border: 1px solid rgba(119, 184, 255, 0.25);
+  background: rgba(22, 119, 223, 0.12);
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.2rem 4rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 2rem;
+  min-height: 680px;
+  padding: 3rem 0 2rem;
+}
+
+.hero-content,
+.hero-visual {
+  position: relative;
+}
+
+.eyebrow,
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--sky);
+  font-weight: 700;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.eyebrow span,
+.kicker::before {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: rgba(119, 184, 255, 0.7);
+}
+
+.hero h1,
+.page-hero h1,
+.section-heading h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 0.9;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 9vw, 9rem);
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.hero h1 strong {
+  display: block;
+  color: var(--sky);
+  font-weight: 800;
+}
+
+.hero-lede {
+  max-width: 640px;
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--blue), var(--sky));
+  color: var(--navy);
+  box-shadow: 0 20px 38px rgba(22, 119, 223, 0.4);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: rgba(119, 184, 255, 0.28);
+}
+
+.full {
+  width: 100%;
+}
+
+.hero-points {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hero-points li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.hero-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sky);
+}
+
+.hero-visual {
+  display: grid;
+  place-items: center;
+  min-height: 520px;
+}
+
+.emblem {
+  position: relative;
+  width: min(40vw, 430px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+
+.emblem-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(119, 184, 255, 0.26);
+}
+
+.ring-one {
+  inset: 7%;
+  box-shadow: inset 0 0 35px rgba(119, 184, 255, 0.12);
+}
+
+.ring-two {
+  inset: 18%;
+  border-color: rgba(119, 184, 255, 0.42);
+}
+
+.emblem-core {
+  position: relative;
+  width: 58%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(119, 184, 255, 0.5), rgba(17, 62, 110, 0.7) 38%, rgba(2, 9, 20, 0.9) 80%);
+  border: 1px solid rgba(119, 184, 255, 0.28);
+  box-shadow: 0 0 34px rgba(119, 184, 255, 0.18);
+}
+
+.emblem-core span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  letter-spacing: -0.08em;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.emblem-core small {
+  position: absolute;
+  bottom: 18%;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #061426;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.4rem 1rem;
+  text-align: center;
+}
+
+.stat strong {
+  font-size: clamp(1.7rem, 2.4vw, 3rem);
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: -0.04em;
+  color: var(--sky);
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading.row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.section-heading h2 em {
+  font-style: normal;
+  color: var(--sky);
+}
+
+.heading-copy {
+  max-width: 500px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.kicker {
+  margin-bottom: 0.8rem;
+  color: var(--sky);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+}
+
+.text-block {
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1.04rem;
+}
+
+.info-card,
+.list-panel,
+.game-card,
+.check-item,
+.schedule-item,
+.join-card,
+.form-copy,
+.registration-form {
+  background: rgba(9, 27, 47, 0.8);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.info-card,
+.list-panel {
+  padding: 1.8rem;
+}
+
+.info-card h3,
+.check-item h3,
+.game-card h3,
+.schedule-item h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.35rem;
+}
+
+.info-card ul,
+.list-panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.large-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.game-card {
+  padding: 1.4rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-badge {
+  width: fit-content;
+  display: inline-block;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(119, 184, 255, 0.1);
+  border: 1px solid rgba(119, 184, 255, 0.2);
+  color: var(--sky);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.game-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.check-item {
+  padding: 1.6rem 1.4rem;
+}
+
+.check-item span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(22, 119, 223, 0.12);
+  color: var(--sky);
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.check-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.schedule-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.4rem 1.5rem;
+}
+
+.day {
+  display: inline-block;
+  color: var(--sky);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.schedule-item p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.schedule-item time {
+  color: var(--ink);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.join-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 7vw, 6rem);
+  padding: clamp(4rem, 8vw, 8rem) 0 2rem;
+}
+
+.join-copy h2 {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.join-copy h2 em {
+  color: var(--sky);
+  font-style: normal;
+}
+
+.join-copy p {
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.join-card {
+  padding: 1.6rem;
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+}
+
+.page-hero {
+  padding: 4rem 0 1rem;
+}
+
+.page-hero h1 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+
+.alt-section {
+  background: rgba(12, 26, 42, 0.55);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.form-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-copy {
+  padding: 2rem;
+}
+
+.form-copy h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.form-copy p {
+  margin: 0;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.registration-form {
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.registration-form label {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(119, 184, 255, 0.18);
+  background: rgba(2, 9, 20, 0.76);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(119, 184, 255, 0.75);
+  box-shadow: 0 0 0 4px rgba(119, 184, 255, 0.14);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-status {
+  min-height: 1.5em;
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.form-status.error {
+  color: var(--danger);
+}
+
+.site-footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 1.2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.site-footer small {
+  color: var(--muted);
+}
+
+.menu-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 999px;
+  margin: 6px 0;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .two-column,
+  .join-section,
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-item {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .stats-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .menu-button {
+    display: inline-block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    background: rgba(4, 16, 31, 0.98);
+    border-bottom: 1px solid var(--line);
+    padding: 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 2rem;
+  }
+
+  .hero-points {
+    grid-template-columns: 1fr;
+  }
+
+  .game-grid,
+  .large-grid,
+  .field-row,
+  .stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading.row {
+    display: block;
+  }
+
+  .brand {
+    letter-spacing: 0.08em;
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

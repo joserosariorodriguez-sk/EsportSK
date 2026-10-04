@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join the Team | Simon Kenton Esports</title>
+    <meta
+      name="description"
+      content="Register interest for Simon Kenton Esports and tell us about your experience, interests, and goals."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Simon Kenton Esports home">
+          <span class="brand-mark">SK</span>
+          <span>SIMON KENTON <b>ESPORTS</b></span>
+        </a>
+
+        <button class="menu-button" id="menu-button" aria-expanded="false" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="games.html">Games</a>
+          <a href="eligibility.html">Eligibility</a>
+          <a href="practice.html">Practice</a>
+          <a class="nav-cta active" href="join.html">Join the team</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="kicker">Join the team</p>
+          <h1>Tell us what you bring to the roster.</h1>
+        </section>
+
+        <section class="section">
+          <div class="form-layout">
+            <div class="form-copy">
+              <h2>Interested in competing?</h2>
+              <p>
+                Fill out the form below and we’ll review your interest. Include your
+                experience, preferred game, and anything that helps us know where you fit.
+              </p>
+            </div>
+
+            <form class="registration-form" id="registrationForm" novalidate>
+              <div class="field-row">
+                <label>
+                  Full name
+                  <input type="text" name="name" placeholder="Student athlete name" required />
+                </label>
+
+                <label>
+                  Grade
+                  <select name="grade" required>
+                    <option value="">Select</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="field-row">
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+
+                <label>
+                  Preferred game
+                  <select name="game" required>
+                    <option value="">Choose a title</option>
+                    <option>Valorant</option>
+                    <option>Rocket League</option>
+                    <option>Super Smash Bros.</option>
+                    <option>League of Legends</option>
+                    <option>Unsure / open to options</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                Gaming platform
+                <select name="platform">
+                  <option value="">Select platform</option>
+                  <option>PC</option>
+                  <option>Console</option>
+                  <option>Both</option>
+                </select>
+              </label>
+
+              <label>
+                Experience level
+                <select name="experience">
+                  <option value="">Select your level</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                  <option>Competitive / club</option>
+                </select>
+              </label>
+
+              <label>
+                Tell us about yourself
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Share your experience, strengths, interests, and goals."
+                  required
+                ></textarea>
+              </label>
+
+              <button type="submit" class="button primary full">Submit interest</button>
+
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="brand">
+          <span class="brand-mark">SK</span>
+          <span>SIMON KENTON <b>ESPORTS</b></span>
+        </div>
+        <p>Competitive. Respectful. Welcoming.</p>
+        <small>© <span id="year"></span> Simon Kenton Esports</small>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
