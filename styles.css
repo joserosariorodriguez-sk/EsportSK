@@ -233,6 +233,10 @@ main {
   margin-top: 2rem;
 }
 
+.section-actions {
+  margin-top: 2.5rem;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -479,11 +483,46 @@ main {
 }
 
 .game-card {
+  --game-accent: var(--sky);
   padding: 1.4rem;
   min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-top: 2px solid var(--game-accent);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:nth-child(2) {
+  --game-accent: #f4cc6d;
+}
+
+.game-card:nth-child(3) {
+  --game-accent: #ff879a;
+}
+
+.game-card:nth-child(4) {
+  --game-accent: #b39aff;
+}
+
+.game-card:nth-child(5) {
+  --game-accent: #7ce7b2;
+}
+
+.game-card:nth-child(6) {
+  --game-accent: #ff9770;
+}
+
+.game-card:hover,
+.game-card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--game-accent);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+.game-card .game-badge {
+  color: var(--game-accent);
+  border-color: var(--game-accent);
 }
 
 .game-art {
@@ -556,13 +595,20 @@ main {
   align-items: center;
   gap: 1.5rem;
   padding: 1.4rem 1.5rem;
+  border-left: 3px solid var(--blue);
 }
 
 .day {
   display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(119, 184, 255, 0.08);
   color: var(--sky);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.72rem;
 }
@@ -574,10 +620,28 @@ main {
 }
 
 .schedule-item time {
+  display: inline-flex;
+  justify-self: start;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(119, 184, 255, 0.08);
   color: var(--ink);
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
+}
+
+#games,
+#eligibility,
+#schedule {
+  scroll-margin-top: 1.5rem;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 4px;
 }
 
 .sportsyou-section {
