@@ -51,84 +51,15 @@
             <div class="form-copy">
               <h2>Interested in competing?</h2>
               <p>
-                Fill out the form below and we’ll review your interest. Include your
+                Fill out the form below and we'll review your interest. Include your
                 experience, preferred game, and anything that helps us know where you fit.
               </p>
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
             </div>
 
-            <form class="registration-form" id="registrationForm" novalidate>
-              <div class="field-row">
-                <label>
-                  Full name
-                  <input type="text" name="name" placeholder="Student athlete name" required />
-                </label>
-
-                <label>
-                  Grade
-                  <select name="grade" required>
-                    <option value="">Select</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                  </select>
-                </label>
-              </div>
-
-              <div class="field-row">
-                <label>
-                  Email
-                  <input type="email" name="email" placeholder="you@example.com" required />
-                </label>
-
-                <label>
-                  Preferred game
-                  <select name="game" required>
-                    <option value="">Choose a title</option>
-                    <option>Valorant</option>
-                    <option>Rocket League</option>
-                    <option>Super Smash Bros.</option>
-                    <option>League of Legends</option>
-                    <option>Unsure / open to options</option>
-                  </select>
-                </label>
-              </div>
-
-              <label>
-                Gaming platform
-                <select name="platform">
-                  <option value="">Select platform</option>
-                  <option>PC</option>
-                  <option>Console</option>
-                  <option>Both</option>
-                </select>
-              </label>
-
-              <label>
-                Experience level
-                <select name="experience">
-                  <option value="">Select your level</option>
-                  <option>Beginner</option>
-                  <option>Intermediate</option>
-                  <option>Advanced</option>
-                  <option>Competitive / club</option>
-                </select>
-              </label>
-
-              <label>
-                Tell us about yourself
-                <textarea
-                  name="message"
-                  rows="5"
-                  placeholder="Share your experience, strengths, interests, and goals."
-                  required
-                ></textarea>
-              </label>
-
-              <button type="submit" class="button primary full">Submit interest</button>
-
-              <p class="form-status" id="formStatus" aria-live="polite"></p>
-            </form>
+            <div class="registration-form" id="formContainer">
+              <div data-formspace="https://simple-sequoia-119.forms.space/simon-kenton-esports-join-the-team-tarlox"></div>
+            </div>
           </div>
         </section>
       </main>
@@ -143,6 +74,7 @@
       </footer>
     </div>
 
+    <script src="https://formspace.com/embed.js" defer crossorigin></script>
     <script src="script.js"></script>
   </body>
 </html>
